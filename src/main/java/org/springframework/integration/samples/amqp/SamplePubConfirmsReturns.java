@@ -21,7 +21,7 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * Starts the Spring Context and will initialize the Spring Integration message flow.
+ * Starts the Spring Context and will initialize the Spring Integration message flow.  
  *
  * @author Gary Russell.
  * @since 4.0
