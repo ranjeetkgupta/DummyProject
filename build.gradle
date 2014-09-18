@@ -1,0 +1,74 @@
+apply plugin: 'eclipse'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'tomcat'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'org.gradle.api.plugins:gradle-tomcat-plugin:0.9.9'
+    }
+}
+
+
+
+war {
+  baseName = 'innovation'
+}
+
+dependencies {
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+           "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}"
+    tomcat("org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}") {
+        exclude group: 'org.eclipse.jdt.core.compiler', module: 'ecj'
+    }
+
+	compile "org.springframework:spring-context:4.0.1.RELEASE"
+	compile "org.springframework:spring-webmvc:4.0.1.RELEASE"
+	compile "org.springframework.social:spring-social-twitter:$springSocialTwitterVersion"
+	
+
+	compile "org.slf4j:slf4j-api:$slf4jVersion"
+	compile "org.slf4j:jcl-over-slf4j:1.6.6"
+	compile "org.slf4j:slf4j-log4j12:1.6.6"
+	compile "log4j:log4j:$log4jVersion"
+	compile "javax.inject:javax.inject:$javaxInjectVersion"
+	compile 'org.springframework.data:spring-data-mongodb:1.5.1.RELEASE'
+	
+	compile 'org.codehaus.jackson:jackson-core-asl:1.9.13'
+	compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'	
+	compile 'junit:junit:4.7'
+	compile 'javax.servlet:jstl:1.2'
+	compile 'org.springframework.cloud:cloudfoundry-connector:0.9.5'
+	compile 'org.springframework.cloud:spring-service-connector:0.9.5'
+	compile 'org.aspectj:aspectjrt:1.6.10'
+	compile 'org.apache.httpcomponents:httpclient:4.3.1'
+	providedCompile 'javax.servlet.jsp:jsp-api:2.1'	
+	providedCompile "javax.servlet:javax.servlet-api:3.0.1"
+	
+	
+	
+}
+
+repositories {
+	mavenLocal()
+	
+	maven { url 'http://repo.spring.io/milestone' }
+	maven { url 'http://repo.spring.io/snapshot' }
+	maven { url 'http://download.java.net/maven/2' }
+	maven { url 'http://repo.spring.io/release' }
+	mavenCentral()
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.1'
+}
+
+
+task showMeCache << {
+  configurations.compile.each { println it }
+}
+
