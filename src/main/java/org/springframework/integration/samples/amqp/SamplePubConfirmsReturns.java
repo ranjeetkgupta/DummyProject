@@ -47,6 +47,7 @@ public final class SamplePubConfirmsReturns {
 				  + "\n    For more information please visit:                   "
 				  + "\n    http://www.springsource.org/spring-integration       "
 				  + "\n                                                         "
+				  + "\n                                                         "
 				  + "\n=========================================================" );
 
 		@SuppressWarnings("resource")
