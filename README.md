@@ -89,5 +89,5 @@ Some further resources:
 * Spring AMQP - [http://www.springsource.org/spring-amqp](http://www.springsource.org/spring-amqp)
 
 TBD -- Some more doc to be added changed !!
-
+ part 2 changes
 
