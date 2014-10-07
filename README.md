@@ -88,6 +88,6 @@ Some further resources:
 * RabbitMQ -  [http://www.rabbitmq.com/](http://www.rabbitmq.com/)
 * Spring AMQP - [http://www.springsource.org/spring-amqp](http://www.springsource.org/spring-amqp)
 
-TBD -- Some more doc to be added changed !!
+TBD -- Some more doc to be added changed !! part 1
 
 
