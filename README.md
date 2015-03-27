@@ -18,6 +18,8 @@ If you imported the example into your IDE, you can just run class **org.springfr
 Alternatively, you can start the sample from the command line:
 
 * ./gradlew :amqp:runSimple
+* 
+test
 
 Enter some data (e.g. 'foo') on the console; you will see a [tapInbound] log and 'Received: foo'.
 
